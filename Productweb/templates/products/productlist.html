@@ -1,0 +1,41 @@
+{% extends "products/layout.html" %}
+
+{% block content %}
+<div class="container">
+<h1 class="text-center text-light bg-info">PRODUCT</h1>
+<p>
+   <a class="btn btn-outline-primary" href="">
+        Thêm mới sản phẩm
+   </a>
+</p>
+
+<table class="table table-bordered  table-hover">
+    <thead>
+    <tr class="table-success text-center">
+
+        <th>Tên Sản Phẩm</th>
+        <th>Giá</th>
+        <th>Số Lượng</th>
+        <th>Mô tả</th>
+        <th>Thể Loại</th>
+        <th>Ảnh</th>
+        <th>Xem chi tiết sản phẩm</th>
+    </tr>
+    </thead>
+    <tbody>
+     {% for item in data %}
+    <tr class="text-center">
+    <th>{{item.ProductsName}}</th>
+    <th>{{item.ProductsPrice}}</th>
+    <th>{{item.ProductsNumber}}</th>
+    <th>{{item.ProductsDescription}}</th>
+    <th>{{item.Categories.CategoriesName}}</th>
+    <th><img src="{{item.ProductsImage.url}}" width="100px" height="100px"></th>
+    <th><a class="btn btn-success" href="http://127.0.0.1:8000/details">View</a> </th>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock %}

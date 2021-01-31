@@ -1,0 +1,71 @@
+{% extends "products/layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h3 class="display-4">Chi tiết sản phẩm</h3>
+    {% for item in data %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>{{item.ProductsName}}</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 text-primary">
+                    <span class="label label-primary">Giá: </span>
+                    <span class="monospaced">{{item.ProductsPrice}}</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="label label-primary">Số Lượng: </span>
+                    <span class="number">
+                        {{item.ProductsNumber}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="label label-primary">Mô tả sản phẩm: </span>
+                    <span class="description">
+                        {{item.ProductsDescription}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="label label-primary">Thể loại: </span>
+                    <span class="category">
+                        {{item.ProductsCategory}}
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="label label-primary">Hình ảnh sản phẩm: </span>
+                    <p class="image">
+                        <img src="{{item.ProductsImage.url}}" width="100px" height="100px">
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <a class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">
+                        Read now
+                    </a>
+                </div>
+            </div>
+
+            <hr />
+        </div>
+    </div>
+      {% endfor %}
+</div>
+{% endblock %}
